@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+
+mongodb/docker_volumes/mongodb_data/*
+!mongodb/docker_volumes/mongodb_data/.gitkeep
