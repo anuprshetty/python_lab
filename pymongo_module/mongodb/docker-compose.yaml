@@ -1,0 +1,16 @@
+version: "3" # Version of docker-compose
+
+services:
+  mongodb-server:
+    image: "mongo:latest"
+    container_name: mongodb-server-container
+    hostname: mongodb-server
+    restart: "no"
+    environment:
+      # PUID and PGID environment variables are used to ensure that the MongoDB process running within the container has appropriate permissions and access rights to the files and resources it needs within the containerized environment.
+      - PUID=1000 # Process User ID --> the user ID under which the MongoDB process inside a Docker container will run.
+      - PGID=1000 # Process Group ID --> the group ID for the MongoDB process inside the Docker container.
+    ports:
+      - 27017:27017
+    volumes:
+      - ./docker_volumes/mongodb_data/:/data/db/
