@@ -83,3 +83,17 @@ for document in cursor:
         print('{} : {}'.format(key, value))
     print("-------------------------------------------------")
 
+print('Count: ')
+print("-------------------------------------------------")
+
+print('- Number of documents with age=35: ')
+count = collection.count_documents({'age': 35})
+print(count)
+print("-------------------------------------------------")
+
+print('- Total number of documents: ')
+# count = collection.count_documents()
+count = collection.count_documents({})
+print(count)
+print("-------------------------------------------------")
+
