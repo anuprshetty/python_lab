@@ -97,3 +97,21 @@ count = collection.count_documents({})
 print(count)
 print("-------------------------------------------------")
 
+print('Updation: - Using MongoDB update operators: ')
+print("-------------------------------------------------")
+
+print('- Update one document: ')
+update_result = collection.update_one({'_id': 3}, {'$set': {'name': 'alice', 'email': 'alice@gmail.com'}})
+print('matched_count: {}'.format(update_result.matched_count))
+print('modified_count: {}'.format(update_result.modified_count))
+print("-------------------------------------------------")
+
+print('- Update multiple documents: ')
+update_result = collection.update_many({'email': {'$regex': 'com$'}}, {
+    '$set': {'address': 'Bengaluru'},
+    "$inc": {'age': 5}
+})
+print('matched_count: {}'.format(update_result.matched_count))
+print('modified_count: {}'.format(update_result.modified_count))
+print("-------------------------------------------------")
+
