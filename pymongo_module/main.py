@@ -115,3 +115,20 @@ print('matched_count: {}'.format(update_result.matched_count))
 print('modified_count: {}'.format(update_result.modified_count))
 print("-------------------------------------------------")
 
+print('Deletion: ')
+print("-------------------------------------------------")
+
+print('- Delete one document: ')
+delete_result = collection.delete_one({"age": 51})
+print('deleted_count: {}'.format(delete_result.deleted_count))
+print("-------------------------------------------------")
+
+print('- Delete multiple documents: ')
+delete_result = collection.delete_many({"age": 40})
+print('deleted_count: {}'.format(delete_result.deleted_count))
+print("-------------------------------------------------")
+
+print('- Delete all documents: ')
+delete_result = collection.delete_many({})
+print('deleted_count: {}'.format(delete_result.deleted_count))
+print("-------------------------------------------------")
