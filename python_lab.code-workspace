@@ -2,6 +2,15 @@
   "folders": [
     {
       "path": "."
+    },
+    {
+      "path": "unittest_module/"
+    },
+    {
+      "path": "pytest_module/"
+    },
+    {
+      "path": "pymongo_module/"
     }
   ],
   "settings": {}
